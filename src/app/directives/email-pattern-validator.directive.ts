@@ -21,7 +21,7 @@ export class EmailPatternValidatorDirective implements Validator {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
     const isValid = emailPattern.test(control.value);
-    console.log(isValid);
+
     return isValid ? null : { invalidEmailPattern: true };
   }
 }
