@@ -18,16 +18,22 @@ import { getPasswordStrengthValue } from '../../utils/get-password-strength-valu
 export class UserFormComponent implements OnInit, OnChanges {
   passwordStrengthValue = 0;
 
+  minDate: Date | null = null;
+  maxDate: Date | null = null;
+
   @Input() genresList: GenresListResponse = [];
   @Input() statesList: StatesListResponse = [];
   @Input() userSelected: IUser = {} as IUser;
 
   ngOnInit(): void {
-    // console.log('ngOnInit');
-    // console.log('genresList', this.genresList);
-    // console.log('statesList', this.statesList);
-    // console.log('userSelected', this.userSelected);
+    this.setMinAndMaxDate();
   }
+
+  private setMinAndMaxDate() {
+    this.minDate = new Date(new Date().getFullYear() - 100, 0, 1);
+    this.maxDate = new Date();
+  }
+
   ngOnChanges(changes: SimpleChanges): void {
     const USER_CHANGED = changes['userSelected'];
     if (USER_CHANGED) {
