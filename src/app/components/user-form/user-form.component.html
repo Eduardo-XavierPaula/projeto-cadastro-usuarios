@@ -125,7 +125,8 @@
             [min]="minDate"
             [max]="maxDate"
             name="dataNascimento"
-            ngModel
+            [ngModel]="dateValue"
+            (dateChange)="onDateChange($event)"
             readonly
             required
           />
