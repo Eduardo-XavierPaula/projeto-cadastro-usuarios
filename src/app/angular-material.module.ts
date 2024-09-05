@@ -11,7 +11,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatTableModule } from '@angular/material/table';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-
+import {
+  MAT_DIALOG_DATA,
+  MatDialog,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogModule,
+} from '@angular/material/dialog';
 @NgModule({
   imports: [
     MatCardModule,
@@ -25,6 +34,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     MatAutocompleteModule,
     MatCheckboxModule,
+    MatDialogModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
   ],
   providers: [provideNativeDateAdapter()],
   exports: [
@@ -39,6 +53,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatTableModule,
     MatAutocompleteModule,
     MatCheckboxModule,
+    MatDialogModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,
   ],
 })
 export class AngularMaterialModule {}
