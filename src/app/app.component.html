@@ -4,9 +4,11 @@
     (onUserSelected)="onUserSelected($event)"
   ></app-users-card-list>
 </div>
+@if(userSelectedIndex !== undefined){
 <app-user-form
   [genresList]="genresList"
   [statesList]="statesList"
   [userSelected]="userSelected"
   (onFormSubmit)="onFormSubmit()"
 ></app-user-form>
+}
